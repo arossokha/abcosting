@@ -30,9 +30,12 @@
 		<?php $this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
 				array('label'=>'Home', 'url'=>array('/site/index')),
-				array('label'=>'Materialshardwares', 'url'=>array('/materialshardwares')),
-				array('label'=>'Hardwaretypes', 'url'=>array('/hardwaretypes')),
-				array('label'=>'Addexpences', 'url'=>array('/addexpences')),
+				array('label'=>'Ware materials', 'url'=>array('/warematerials')),
+				array('label'=>'Ware content', 'url'=>array('/warecontent')),
+				array('label'=>'Ware services', 'url'=>array('/wareservices')),
+				array('label'=>'Materials hardwares', 'url'=>array('/materialshardwares')),
+				array('label'=>'Hardware types', 'url'=>array('/hardwaretypes')),
+				array('label'=>'Add expences', 'url'=>array('/addexpences')),
 				array('label'=>'Equips', 'url'=>array('/equips')),
 				array('label'=>'Services', 'url'=>array('/services')),
 				array('label'=>'Wares', 'url'=>array('/wares')),

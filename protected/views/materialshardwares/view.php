@@ -21,9 +21,16 @@ $this->menu=array(
 <?php $this->widget('zii.widgets.CDetailView', array(
 	'data'=>$model,
 	'attributes'=>array(
-		'IDMH',
-		'IDType',
 		'Name',
-		'UnitCost',
+		array(
+			'label' => 'Type',
+			'type' => 'raw',
+			'value' => $model->iDType->Name,
+		),
+		array(
+			'label' => 'UnitCost',
+			'type' => 'raw',
+			'value' => '$'.$model->UnitCost,
+		)
 	),
 )); ?>

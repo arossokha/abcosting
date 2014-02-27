@@ -4,6 +4,7 @@
  * This is the model class for table "warematerials".
  *
  * The followings are the available columns in table 'warematerials':
+ * @property integer $IDWarematerials
  * @property integer $IDWork
  * @property integer $IDWare
  * @property integer $IDMH
@@ -41,7 +42,7 @@ class Warematerials extends CActiveRecord
 			array('CountMaterials, HoursWork, HoursEquip', 'numerical'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('IDWork, IDWare, IDMH, IDEquip, CountMaterials, HoursWork, HoursEquip', 'safe', 'on'=>'search'),
+			array('IDWarematerials, IDWork, IDWare, IDMH, IDEquip, CountMaterials, HoursWork, HoursEquip', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -66,6 +67,7 @@ class Warematerials extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
+			'IDWarematerials' => 'Idwarematerials',
 			'IDWork' => 'Idwork',
 			'IDWare' => 'Idware',
 			'IDMH' => 'Idmh',
@@ -94,6 +96,7 @@ class Warematerials extends CActiveRecord
 
 		$criteria=new CDbCriteria;
 
+		$criteria->compare('IDWarematerials',$this->IDWarematerials);
 		$criteria->compare('IDWork',$this->IDWork);
 		$criteria->compare('IDWare',$this->IDWare);
 		$criteria->compare('IDMH',$this->IDMH);
@@ -105,8 +108,8 @@ class Warematerials extends CActiveRecord
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 			'pagination' => array(
-					'pageSize' => 20
-				),
+				'pageSize' => 20
+			),
 		));
 	}
 
