@@ -45,7 +45,7 @@ return array(
 			),
 		),
 		*/
-		'db'=>require('db.php'),
+		'db'=>require(dirname(__FILE__).DIRECTORY_SEPARATOR.'db.php'),
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
 			'errorAction'=>'site/error',
