@@ -2,3 +2,4 @@
 assets/*
 protected/runtime/*
 *.sublime-*
+themes/classic/views/
