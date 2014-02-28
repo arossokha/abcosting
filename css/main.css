@@ -260,3 +260,36 @@ div.search-form
     position: absolute;
     top: -9999px;
 }
+
+.categories-area{
+	width:800px;
+	margin-left:auto;
+    margin-right:auto;	
+    padding: 10px 0 0 58px;
+}
+
+.categories-area>h1{
+	color:#539CC7;
+	font-weight: bold;
+}
+
+.category-block{
+	width:210px;
+	height:200px;
+	display: inline-block;
+	margin: 15px;
+}
+
+.category-block a{
+	width: 200px;
+	display:block;
+	text-align: center;
+}
+
+.category-block>a>img{
+	width:160px;
+	height:160px;
+	display:block;
+    margin:auto;
+}
+

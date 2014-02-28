@@ -22,4 +22,70 @@ $this->pageTitle=Yii::app()->name;
 		<hr>
 		<p>Summary		$<span id="summary-price"></span></p>
 	</div>	
+
+</div>
+<div class="categories-area">
+	<h1>Categories</h1>
+	<div class="category-block" id="products">
+		<a href="/index.php?r=wares">
+			<img src="/img/product.png">
+			Products
+		</a>
+	</div>
+
+	<div class="category-block" id="materials">
+		<a href="/index.php?r=materialshardwares">
+			<img src="/img/materials.png">
+			Materials
+		</a>
+	</div>
+
+	<div class="category-block" id="equips">
+		<a href="/index.php?r=equips">
+			<img src="/img/equip.png">
+			Equipment
+		</a>
+	</div>
+
+	<div class="category-block" id="work">
+		<a href="/index.php?r=work">
+			<img src="/img/work.png">
+			Work
+		</a>
+	</div>
+
+	<div class="category-block" id="services">
+		<a href="/index.php?r=services">
+			<img src="/img/services.png">
+			Services
+		</a>
+	</div>
+
+	<div class="category-block" id="expences">
+		<a href="/index.php?r=addexpences">
+			<img src="/img/coins.png">
+			Additional Expences
+		</a>
+	</div>
+
+	<div class="category-block" id="process">
+		<a href="/index.php?r=warematerials">
+			<img src="/img/process.png">
+			Production process
+		</a>
+	</div>
+
+	<div class="category-block" id="product-content">
+		<a href="/index.php?r=warecontent">
+			<img src="/img/list.png">
+			Product Content
+		</a>
+	</div>
+
+	<div class="category-block" id="servicescost">
+		<a href="/index.php?r=wareservices">
+			<img src="/img/check.png">
+			Services Cost
+		</a>
+	</div>
 </div>
