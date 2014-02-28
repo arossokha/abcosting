@@ -227,3 +227,36 @@ div.search-form
 {
 	background: #80CFFF;
 }
+
+.calc{
+	width:200px;
+	border:5px solid #539CC7;
+	border-radius: 10px;
+	box-shadow: 0 0 10px #539CC7;
+	padding:5px 10px;
+	margin-left:auto;
+    margin-right:auto;
+}
+
+.calc>select{
+	
+}
+
+.processor{
+	
+}
+
+.processor>p{
+	white-space:pre;
+	margin:2px;
+}
+
+.processor>p:first-child{
+	margin:10px 0;
+}
+
+.invisible{
+	visibility: hidden;
+    position: absolute;
+    top: -9999px;
+}
