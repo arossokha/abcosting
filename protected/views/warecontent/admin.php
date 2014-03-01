@@ -27,7 +27,8 @@ $('.search-form form').submit(function(){
 ?>
 
 <h1>Manage Warecontents</h1>
-
+<?php echo CHtml::link('Create',array($this->id.'/create')); ?>
+<br />
 <?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
 <div class="search-form" style="display:none">
 <?php $this->renderPartial('_search',array(
