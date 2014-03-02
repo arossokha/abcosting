@@ -26,7 +26,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Addexpences</h1>
+<h1>Manage Additional expences</h1>
 
 <?php echo CHtml::link('Create',array($this->id.'/create')); ?>
 <br />

@@ -26,7 +26,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h1>Manage Wareservices</h1>
+<h1>Services for production</h1>
 <?php echo CHtml::link('Create',array($this->id.'/create')); ?>
 <br />
 <?php echo CHtml::link('Advanced Search','#',array('class'=>'search-button')); ?>
