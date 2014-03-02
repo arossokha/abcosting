@@ -32,6 +32,74 @@ class SiteController extends Controller
 		$this->render('index');
 	}
 
+	public function actionAjax()
+	{
+		try {
+			$wareId = (int) $_POST['wareId'];
+			$Warematerials = Warematerials::model()->findAll('IDWare = :id ', array(
+				':id' => $wareId
+			));
+
+			$materialsCost = 0;
+			foreach ($Warematerials as $wm) {
+				$materialsCost += $wm->CountMaterials * $wm->iDMH->UnitCost; 	
+			}
+
+			$Warecontent = Warecontent::model()->findAll('IDWare = :id ', array(
+				':id' => $wareId
+			));
+
+			foreach ($Warecontent as $wc) {
+				$materialsCost += $wc->CountHardware * $wc->iDMH->UnitCost; 	
+			}
+
+
+			$equipCost = 0;
+			foreach ($Warematerials as $wm) {
+				$equipCost += $wm->HoursEquip * $wm->iDEquip->CostHour; 	
+			}
+
+			$workCost = 0;
+			foreach ($Warematerials as $wm) {
+				$workCost += $wm->HoursWork * $wm->iDWork->CostHour; 	
+			}
+			
+			$equipHours = 0;
+			foreach ($Warematerials as $wm) {
+				$equipHours += $wm->HoursEquip; 	
+			}
+
+			$workHours = 0;
+			foreach ($Warematerials as $wm) {
+				$workHours += $wm->HoursWork; 	
+			}
+
+			$maxHours = max($equipHours, $workHours);
+
+			$otherCost = 0;
+			$countProducts = Wares::model()->count();
+
+			foreach (addexpences::model()->findAll() as $aex) {
+				$otherCost += $aex/$countProducts*$maxHours;
+			}
+
+			$summary = $materialsCost + $equipCost + $workCost + $otherCost;
+		} catch(CExeption $e) {
+			echo CJSON::encode(array('status' => false, 'msg' => $e->getMessage()));
+			die();
+		}
+
+		$res = array(
+				'materialsCost' => ($materialsCost/10),
+				'equipCost' => ($equipCost/10),
+				'workCost' => ($workCost/10),
+				'otherCost' => ($otherCost/10),
+				'summary' => ($summary/10),
+			);
+
+		echo CJSON::encode(array('status' =>  true,'results' => $res));
+	}
+
 	/**
 	 * This is the action to handle external exceptions.
 	 */

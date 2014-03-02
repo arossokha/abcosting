@@ -20,4 +20,20 @@ class Controller extends CController
 	 * for more details on how to specify this property.
 	 */
 	public $breadcrumbs=array();
+
+	public function init() {
+		$cs = Yii::app()->getClientScript();
+		$cs->packages = array(
+			'jquery.ui' => array(
+				'js' => array('jui/js/jquery-ui.min.js'),
+				'css' => array('jui/css/base/jquery-ui.css'),
+				'depends' => array('jquery'),
+			),
+		);
+
+		$cs->registerCoreScript('jquery.ui',array('position'=> CClientScript::POS_BEGIN));
+		$cs->registerScriptFile('/js/main.js', CClientScript::POS_BEGIN);
+
+		return parent::init();
+	}
 }
